@@ -146,7 +146,7 @@ export const ReportPreviewPage: React.FC = () => {
                     <div style={styles.aiContainer}>
                         <div style={styles.aiAvatarBox}>
                             <img
-                                src="/assets/ai_avatar.png"
+                                src="/assets/Avatar.png"
                                 style={styles.aiAvatar}
                                 alt="AI Avatar"
                             />

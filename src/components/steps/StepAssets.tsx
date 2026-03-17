@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import type { CJMData } from '../CJMFlow';
 import type { Asset } from '../../types/client';
-import avatarImage from '../../assets/avatar_full.png';
+const AVATAR_IMAGE = '/assets/Avatar.png';
 import { aiApi } from '../../api/aiApi';
 
 interface StepAssetsProps {
@@ -114,7 +114,7 @@ const StepAssets: React.FC<StepAssetsProps> = ({ data, setData, onNext, onPrev }
                     background: '#fff'
                 }}>
                     <img
-                        src={avatarImage}
+                        src={AVATAR_IMAGE}
                         alt="AI Assistant"
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />

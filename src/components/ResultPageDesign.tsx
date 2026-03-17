@@ -4,7 +4,7 @@ import {
   Plus,
   Trash2,
 } from 'lucide-react';
-import avatarImage from '../assets/avatar_full.png';
+const AVATAR_IMAGE = '/assets/Avatar.png';
 import { getGoalImage, GOAL_GALLERY_ITEMS } from '../utils/GoalImages';
 import { PortfolioDistribution } from './PortfolioDistribution';
 import { formatMonthsToDate } from '../utils/dateUtils';
@@ -325,7 +325,7 @@ const ResultPageDesign: React.FC<ResultPageDesignProps> = ({
                 boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
                 border: '2px solid #C60C7F'
               }}>
-                <img src={avatarImage} alt="Victoria" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src={AVATAR_IMAGE} alt="Михаил" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
             </div>
 

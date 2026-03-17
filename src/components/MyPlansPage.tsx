@@ -195,7 +195,7 @@ const MyPlansPage: React.FC<MyPlansPageProps> = ({ onCreatePlan, onViewPlan, aut
                         У вас пока нет финансового плана
                     </h2>
                     <p style={{ color: 'var(--text-muted)', fontSize: '15px', maxWidth: '400px', margin: '0 auto 24px' }}>
-                        Создайте свою первую финансовую цель, и Анна поможет вам составить план её достижения.
+                        Создайте свою первую финансовую цель, и Михаил поможет вам составить план достижения цели.
                     </p>
                     <button className="btn-primary" onClick={onCreatePlan} style={{ fontSize: '16px', padding: '14px 32px' }}>
                         Создать финансовый план

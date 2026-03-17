@@ -14,7 +14,7 @@ import {
     TrendingDown,
     Activity
 } from 'lucide-react';
-import avatarImage from '../assets/avatar_full.png';
+const AVATAR_IMAGE = '/assets/Avatar.png';
 
 const inflationData = [
     { month: 'Янв', rate: 11.2 },
@@ -119,7 +119,7 @@ const PastPage: React.FC = () => {
                     border: '3px solid #fff',
                     boxShadow: '0 8px 16px rgba(0,0,0,0.1)'
                 }}>
-                    <img src={avatarImage} alt="Anna" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={AVATAR_IMAGE} alt="Михаил" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <div style={{ flex: 1 }}>
                     <div style={{ fontSize: '12px', fontWeight: '800', color: '#C60C7F', textTransform: 'uppercase', marginBottom: '8px', letterSpacing: '1px' }}>

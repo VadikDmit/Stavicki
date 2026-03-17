@@ -1,6 +1,6 @@
 import React from 'react';
 import './GoalsReport.css';
-import avatarImage from '../src/assets/avatar_full.png';
+const AVATAR_IMAGE = '/assets/Avatar.png';
 import { getGoalImage } from '../src/utils/GoalImages';
 
 export interface GoalReportItem {
@@ -71,7 +71,7 @@ export const GoalsReport: React.FC<GoalsReportProps> = ({
           <div className="goals-report__goal-inner">
             {/* Шапка: аватар + номер цели + название + дата достижения */}
             <div className="goals-report__goal-header">
-              <img src={avatarImage} alt="" className="goals-report__goal-avatar" />
+              <img src={AVATAR_IMAGE} alt="" className="goals-report__goal-avatar" />
               <div className="goals-report__goal-header-text">
                 <h2 className="goals-report__goal-title">Цель {index + 1}. {goal.name}</h2>
                 {goal.achievementDate && (

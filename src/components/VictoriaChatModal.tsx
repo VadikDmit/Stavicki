@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Send, User } from 'lucide-react';
-import avatarImage from '../assets/avatar_full.png';
+const AVATAR_IMAGE = '/assets/Avatar.png';
 import { aiApi } from '../api/aiApi';
 
 interface Message {
@@ -59,7 +59,7 @@ const VictoriaChatModal: React.FC<VictoriaChatModalProps> = ({
                     );
                 } catch (err) {
                     console.error('Failed to start field chat', err);
-                    setMessages([{ id: 'error', text: 'Извините, не удалось подключиться к Виктории.', sender: 'victoria' }]);
+                    setMessages([{ id: 'error', text: 'Извините, не удалось подключиться к Михаилу.', sender: 'victoria' }]);
                     setIsTyping(false);
                 }
             };
@@ -148,10 +148,10 @@ const VictoriaChatModal: React.FC<VictoriaChatModalProps> = ({
                         }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                                 <div style={{ width: '40px', height: '40px', borderRadius: '12px', overflow: 'hidden' }}>
-                                    <img src={avatarImage} alt="Victoria" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    <img src={AVATAR_IMAGE} alt="Михаил" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                 </div>
                                 <div>
-                                    <div style={{ fontWeight: 800, color: '#1e293b', fontSize: '15px' }}>Виктория</div>
+                                    <div style={{ fontWeight: 800, color: '#1e293b', fontSize: '15px' }}>Михаил</div>
                                     <div style={{ fontSize: '12px', color: '#64748b' }}>Параметр: {fieldLabel}</div>
                                 </div>
                             </div>
@@ -172,7 +172,7 @@ const VictoriaChatModal: React.FC<VictoriaChatModalProps> = ({
                                 <div key={m.id} style={{ display: 'flex', justifyContent: m.sender === 'victoria' ? 'flex-start' : 'flex-end', gap: '8px' }}>
                                     {m.sender === 'victoria' && (
                                         <div style={{ width: '28px', height: '28px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0, marginTop: '4px' }}>
-                                            <img src={avatarImage} alt="V" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                            <img src={AVATAR_IMAGE} alt="Михаил" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                         </div>
                                     )}
                                     <div style={{

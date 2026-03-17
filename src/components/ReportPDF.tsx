@@ -348,7 +348,7 @@ export const ReportPDF: React.FC<{ data: any }> = ({ data }) => {
                     <View style={styles.aiContainer}>
                         <View style={styles.aiAvatarBox}>
                             <Image
-                                src="public/assets/ai_avatar.png"
+                                src="/assets/Avatar.png"
                             />
                         </View>
                         <View style={styles.aiTextBox}>

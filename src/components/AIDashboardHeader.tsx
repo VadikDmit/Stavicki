@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Send, Maximize2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { aiApi } from '../api/aiApi';
-import avatarImage from '../assets/avatar_full.png';
+const AVATAR_IMAGE = '/assets/Avatar.png';
 
 interface AIDashboardHeaderProps {
     clientName: string;
@@ -30,7 +30,7 @@ const AIDashboardHeader: React.FC<AIDashboardHeaderProps> = ({ clientName, onOpe
         const lastGreetingDate = localStorage.getItem('last_ai_greeting_mainPFP');
 
         if (lastGreetingDate === today) {
-            setAiResponse(`С возвращением, ${clientName}! Готова продолжить работу над вашим планом.`);
+            setAiResponse(`С возвращением, ${clientName}! Готов продолжить работу над вашим планом.`);
             return;
         }
 
@@ -56,7 +56,7 @@ const AIDashboardHeader: React.FC<AIDashboardHeaderProps> = ({ clientName, onOpe
             );
         } catch (error) {
             console.error('Failed to get greeting:', error);
-            setAiResponse('Доброе утро! Готова помочь вам с финансами.');
+            setAiResponse('Доброе утро! Готов помочь вам с финансами.');
             setIsTyping(false);
         }
     };
@@ -110,8 +110,8 @@ const AIDashboardHeader: React.FC<AIDashboardHeaderProps> = ({ clientName, onOpe
                     border: '4px solid #fff'
                 }}>
                     <img
-                        src={avatarImage}
-                        alt="Anna Dengina"
+                        src={AVATAR_IMAGE}
+                        alt="Михаил"
                         style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
                 </div>
@@ -148,7 +148,7 @@ const AIDashboardHeader: React.FC<AIDashboardHeaderProps> = ({ clientName, onOpe
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent'
                     }}>
-                        Финансовый ассистент Анна Деньгина
+                        Финансовый ассистент Михаил
                     </h2>
 
                     <div style={{

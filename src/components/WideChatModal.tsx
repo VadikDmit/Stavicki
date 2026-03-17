@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { X, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { aiApi } from '../api/aiApi';
-import avatarImage from '../assets/avatar_full.png';
+const AVATAR_IMAGE = '/assets/Avatar.png';
 import Markdown from 'react-markdown';
 
 interface WideChatModalProps {
@@ -21,7 +21,7 @@ interface Message {
 
 const WideChatModal: React.FC<WideChatModalProps> = ({ isOpen, onClose, clientData, initialMessage }) => {
     const [messages, setMessages] = useState<Message[]>([
-        { role: 'assistant', content: 'Здравствуйте! Я готова обсудить ваши финансовые цели. Что вас интересует?' }
+        { role: 'assistant', content: 'Здравствуйте! Я готов обсудить ваши финансовые цели. Что вас интересует?' }
     ]);
     const [input, setInput] = useState(initialMessage || '');
     const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -127,10 +127,10 @@ const WideChatModal: React.FC<WideChatModalProps> = ({ isOpen, onClose, clientDa
                             background: '#f3f4f6',
                             overflow: 'hidden'
                         }}>
-                            <img src={avatarImage} alt="AI" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src={AVATAR_IMAGE} alt="AI" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                         <div>
-                            <h3 style={{ fontSize: '18px', fontWeight: '700', margin: 0 }}>Анна Деньгина</h3>
+                            <h3 style={{ fontSize: '18px', fontWeight: '700', margin: 0 }}>Михаил</h3>
                             <div style={{ fontSize: '13px', color: '#10b981', display: 'flex', alignItems: 'center', gap: '6px' }}>
                                 <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981' }}></span>
                                 Онлайн • Финансовый советник
@@ -173,7 +173,7 @@ const WideChatModal: React.FC<WideChatModalProps> = ({ isOpen, onClose, clientDa
                                     <div style={{
                                         width: '36px', height: '36px', borderRadius: '10px', overflow: 'hidden', flexShrink: 0
                                     }}>
-                                        <img src={avatarImage} alt="AI" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <img src={AVATAR_IMAGE} alt="AI" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                     </div>
                                 )}
                                 <div style={{
@@ -254,7 +254,7 @@ const WideChatModal: React.FC<WideChatModalProps> = ({ isOpen, onClose, clientDa
                         </button>
                     </div>
                     <div style={{ textAlign: 'center', marginTop: '12px', fontSize: '12px', color: '#9ca3af' }}>
-                        Анна может ошибаться. Проверяйте важную информацию.
+                        Михаил может ошибаться. Проверяйте важную информацию.
                     </div>
                 </div>
             </motion.div>

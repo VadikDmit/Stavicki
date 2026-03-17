@@ -23,34 +23,40 @@ const Header: React.FC<HeaderProps> = ({ activePage = 'present', onNavigate, onL
         <header style={{
             height: '56px',
             background: '#fff',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            padding: '0 16px',
             borderBottom: '1px solid #eee',
             position: 'sticky',
             top: 0,
             zIndex: 100,
-            gap: '8px',
         }}>
-            {/* Logo */}
             <div style={{
-                fontSize: '17px',
-                fontWeight: '800',
-                color: '#333',
-                flexShrink: 0,
-                whiteSpace: 'nowrap',
-            }}>
-                <span style={{ color: '#C60C7F' }}>Anna</span>
-            </div>
-
-            {/* Navigation */}
-            <nav style={{
+                maxWidth: '1200px',
+                margin: '0 auto',
+                padding: '0 16px',
                 display: 'flex',
-                gap: '4px',
-                flex: 1,
-                justifyContent: 'center',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '8px',
             }}>
+                {/* Logo */}
+                <div style={{
+                    flexShrink: 0,
+                    display: 'flex',
+                    alignItems: 'center',
+                }}>
+                    <img
+                        src="/assets/Logo.png"
+                        alt="CONOMY Terminal"
+                        style={{ height: 28, width: 'auto', display: 'block' }}
+                    />
+                </div>
+
+                {/* Navigation */}
+                <nav style={{
+                    display: 'flex',
+                    gap: '4px',
+                    flex: 1,
+                    justifyContent: 'center',
+                }}>
                 {(['past', 'present', 'future'] as const).map((page) => {
                     const labels = { past: 'Прошлое', present: 'Настоящее', future: 'Будущее' };
                     const isActive = activePage === page;
@@ -76,26 +82,27 @@ const Header: React.FC<HeaderProps> = ({ activePage = 'present', onNavigate, onL
                         </a>
                     );
                 })}
-            </nav>
+                </nav>
 
-            {/* Logout */}
-            <button
-                onClick={handleLogout}
-                style={{
-                    background: 'none',
-                    border: 'none',
-                    color: '#bbb',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    padding: '6px',
-                    borderRadius: '8px',
-                    flexShrink: 0,
-                }}
-                title="Выйти"
-            >
-                <LogOut size={18} />
-            </button>
+                {/* Logout */}
+                <button
+                    onClick={handleLogout}
+                    style={{
+                        background: 'none',
+                        border: 'none',
+                        color: '#bbb',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        padding: '6px',
+                        borderRadius: '8px',
+                        flexShrink: 0,
+                    }}
+                    title="Выйти"
+                >
+                    <LogOut size={18} />
+                </button>
+            </div>
         </header>
     );
 };

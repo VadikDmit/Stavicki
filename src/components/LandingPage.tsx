@@ -61,48 +61,136 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart, onLogin }) => {
 
     return (
         <div className="landing-page-wrap">
+            {/* Existing header / navigation with brand logo */}
             <header className="landing-header">
-                <div className="landing-logo">
-                    <span className="landing-logo__badge">FP</span>
-                    <div>
-                        <div className="landing-logo__title">Финансовый консультант</div>
-                        <div className="landing-logo__caption">Персональный план капитала</div>
+                <div className="landing-header__inner">
+                    <div className="landing-logo">
+                        <img
+                            src="/assets/Logo.png"
+                            alt="CONOMY Terminal"
+                            className="landing-logo__image"
+                        />
                     </div>
-                </div>
 
-                <nav className="landing-nav">
-                    <button type="button" onClick={() => scrollToSection('why-fin-plan')}>Почему важно</button>
-                    <button type="button" onClick={() => scrollToSection('income-growth')}>Рост доходности</button>
-                    <button type="button" onClick={() => scrollToSection('goals-showcase')}>Цели</button>
-                </nav>
+                    <nav className="landing-nav">
+                        <button type="button" onClick={() => scrollToSection('why-fin-plan')}>Почему важно</button>
+                        <button type="button" onClick={() => scrollToSection('income-growth')}>Рост доходности</button>
+                        <button type="button" onClick={() => scrollToSection('goals-showcase')}>Цели</button>
+                    </nav>
 
-                <div className="landing-header__actions">
-                    <button type="button" className="landing-btn landing-btn--ghost" onClick={onLogin}>
-                        Войти
-                    </button>
-                    <button type="button" className="landing-btn landing-btn--primary" onClick={onStart}>
-                        Начать
-                    </button>
+                    <div className="landing-header__actions">
+                        <button type="button" className="landing-btn landing-btn--secondary" onClick={onLogin}>
+                            Войти
+                        </button>
+                        <button type="button" className="landing-btn landing-btn--primary" onClick={onStart}>
+                            Начать
+                        </button>
+                    </div>
                 </div>
             </header>
 
+            {/* Brand hero for CONOMY Terminal */}
             <main className="landing-main">
+                <section className="landing-brand-hero">
+                    <div className="landing-brand-hero__card">
+                        <h1 className="landing-brand-hero__title">CONOMY Terminal</h1>
+                        <p className="landing-brand-hero__description">
+                            Инвестиционный инструмент для формирования инвестиционных решений
+                        </p>
+                        <button
+                            type="button"
+                            className="landing-btn landing-btn--primary landing-btn--large landing-brand-hero__button"
+                            onClick={onStart}
+                        >
+                            Начать
+                        </button>
+                    </div>
+                </section>
+
+                {/* Expert block: Максим Ставицкий */}
+                <section className="landing-expert">
+                    <div className="landing-expert__inner">
+                        <div className="landing-expert__photo">
+                            <img src="/assets/M_S.jpg" alt="Максим Ставицкий" />
+                        </div>
+                        <div className="landing-expert__content">
+                            <h2 className="landing-expert__title ui-heading-h2">Максим Ставицкий</h2>
+                            <p className="landing-expert__subtitle ui-text-t2">
+                                Инвестиционный консультант
+                                <br />
+                                и создатель CONOMY Terminal
+                            </p>
+                            <ul className="landing-expert__list ui-text-t3">
+                                <li>Опыт работы на финансовых рынках и в управлении капиталом.</li>
+                                <li>Фокус на практических, измеримых результатах для частных инвесторов.</li>
+                                <li>Подход «терминала»: прозрачные сценарии, метрики и понятная логика решений.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Education / certifications block */}
+                <section className="landing-section">
+                    <div className="landing-section__head">
+                        <h2 className="ui-heading-h2">
+                            Дополнительное профессиональное
+                            <br />
+                            образование
+                        </h2>
+                    </div>
+                    <div className="landing-education-grid">
+                        <article className="landing-education-card">
+                            <div className="landing-education-card__logo">
+                                <img src="/assets/edu-wharton.png" alt="Wharton Business School" />
+                            </div>
+                            <p className="landing-education-card__text ui-text-t3">
+                                Asset Management, Wharton Business School (University of Pennsylvania)
+                            </p>
+                        </article>
+                        <article className="landing-education-card">
+                            <div className="landing-education-card__logo">
+                                <img src="/assets/edu-mdrt.png" alt="Million Dollar Round Table" />
+                            </div>
+                            <p className="landing-education-card__text ui-text-t3">
+                                Top of the Table, Million Dollar Round Table (MDRT)
+                            </p>
+                        </article>
+                        <article className="landing-education-card">
+                            <div className="landing-education-card__logo">
+                                <img src="/assets/edu-naufor.png" alt="НАУФОР" />
+                            </div>
+                            <p className="landing-education-card__text ui-text-t3">
+                                Financial Modeling &amp; Valuation Analyst Certification, Corporate Finance Institute
+                            </p>
+                        </article>
+                        <article className="landing-education-card">
+                            <div className="landing-education-card__logo">
+                                <img src="/assets/edu-fsfr.png" alt="ФСФР России" />
+                            </div>
+                            <p className="landing-education-card__text ui-text-t3">
+                                Аттестат ФСФР, серия 1
+                            </p>
+                        </article>
+                    </div>
+                </section>
+
+                {/* Исходный лендинг B2C */}
                 <section className="landing-hero">
                     <div className="landing-hero__left">
-                        <p className="landing-kicker">Финансовый консалтинг для людей и семей</p>
-                        <h2 className="landing-hero__title">
+                        <p className="landing-kicker">Финансовый консалтинг для&nbsp;людей и&nbsp;семей</p>
+                        <h2 className="landing-hero__title ui-heading-h2">
                             Финансовое планирование — это система, которая помогает
-                            <span> увеличивать доходность и достигать цели без хаоса.</span>
+                            <span> увеличивать доходность&nbsp;и достигать цели&nbsp;без хаоса.</span>
                         </h2>
-                        <p className="landing-hero__text">
-                            Мы строим личный маршрут: от текущего состояния до нужного уровня капитала,
-                            с понятными шагами, сроками и метриками контроля.
+                        <p className="landing-hero__text ui-text-t3">
+                            Мы строим личный маршрут: от&nbsp;текущего состояния до&nbsp;нужного уровня капитала,
+                            с&nbsp;понятными шагами, сроками и&nbsp;метриками контроля.
                         </p>
                         <div className="landing-hero__actions">
                             <button type="button" className="landing-btn landing-btn--primary landing-btn--large" onClick={onStart}>
-                                Начать финансовое планирование <ArrowRight size={18} />
+                                Начать финансовое планирование
                             </button>
-                            <button type="button" className="landing-btn landing-btn--ghost landing-btn--large" onClick={() => scrollToSection('why-fin-plan')}>
+                            <button type="button" className="landing-btn landing-btn--secondary landing-btn--large" onClick={() => scrollToSection('why-fin-plan')}>
                                 Что это даёт
                             </button>
                         </div>
@@ -110,15 +198,15 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart, onLogin }) => {
 
                     <div className="landing-hero__right">
                         <div className="landing-glass-card">
-                            <div className="landing-glass-card__label">Потенциал дополнительной доходности</div>
-                            <div className="landing-glass-card__main">до 113% годовых</div>
-                            <p className="landing-glass-card__subtext">
-                                В отдельных сценариях за счёт налогового планирования и софинансирования.
-                                По более консервативным сценариям в среднем ориентир — около 17% годовых.
+                            <div className="landing-glass-card__label ui-text-t3">Потенциал дополнительной доходности</div>
+                            <div className="landing-glass-card__main ui-heading-h1">до 113% годовых</div>
+                            <p className="landing-glass-card__subtext ui-text-t3">
+                                В&nbsp;отдельных сценариях за&nbsp;счёт налогового планирования и&nbsp;софинансирования.
+                                По&nbsp;более консервативным сценариям в&nbsp;среднем ориентир — около 17% годовых.
                             </p>
-                            <div className="landing-glass-card__meta">
-                                Важно: результат зависит от ваших параметров, горизонта и выбранных инструментов.
-                                Это не гарантия доходности.
+                            <div className="landing-glass-card__meta ui-text-t4">
+                                Важно: результат зависит от&nbsp;ваших параметров, горизонта и&nbsp;выбранных инструментов.
+                                Это не&nbsp;гарантия доходности.
                             </div>
                         </div>
                     </div>
@@ -126,10 +214,14 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart, onLogin }) => {
 
                 <section id="why-fin-plan" className="landing-section">
                     <div className="landing-section__head">
-                        <h3>Почему финансовое планирование важно</h3>
-                        <p>
-                            Без плана деньги рассеиваются. С планом — превращаются в управляемую систему, которая
-                            работает на ваши приоритеты: безопасность, доход, капитал и цели семьи.
+                        <h2 className="ui-heading-h2">
+                            Почему финансовое
+                            <br />
+                            планирование важно
+                        </h2>
+                        <p className="ui-text-t3">
+                            Без&nbsp;плана деньги рассеиваются. С&nbsp;планом — превращаются в&nbsp;управляемую систему, которая
+                            работает на&nbsp;ваши приоритеты: безопасность, доход, капитал и&nbsp;цели семьи.
                         </p>
                     </div>
 
@@ -141,8 +233,8 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart, onLogin }) => {
                                     <div className="landing-feature-card__icon">
                                         <Icon size={20} />
                                     </div>
-                                    <h4>{item.title}</h4>
-                                    <p>{item.description}</p>
+                                    <h4 className="ui-heading-h3">{item.title}</h4>
+                                    <p className="ui-text-t4">{item.description}</p>
                                 </article>
                             );
                         })}
@@ -151,9 +243,13 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart, onLogin }) => {
 
                 <section id="income-growth" className="landing-section">
                     <div className="landing-section__head">
-                        <h3>За счёт чего растёт доходность</h3>
-                        <p>
-                            Доходность — это не “удача”, а комбинация инструментов, налоговой эффективности и
+                        <h2 className="ui-heading-h2">
+                            За счёт чего
+                            <br />
+                            растёт доходность
+                        </h2>
+                        <p className="ui-text-t3">
+                            Доходность — это не&nbsp;“удача”, а&nbsp;комбинация инструментов, налоговой эффективности и
                             дисциплины исполнения плана.
                         </p>
                     </div>
@@ -165,9 +261,9 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart, onLogin }) => {
                                 <article key={factor.title} className="landing-growth-card">
                                     <div className="landing-growth-card__top">
                                         <Icon size={20} />
-                                        <h4>{factor.title}</h4>
+                                        <h4 className="ui-heading-h3">{factor.title}</h4>
                                     </div>
-                                    <p>{factor.description}</p>
+                                    <p className="ui-text-t4">{factor.description}</p>
                                 </article>
                             );
                         })}
@@ -176,10 +272,15 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart, onLogin }) => {
 
                 <section id="goals-showcase" className="landing-section">
                     <div className="landing-section__head">
-                        <h3>Цели, которые можно закрывать системно</h3>
-                        <p>
-                            От финансовой подушки и ренты до жилья, бизнеса и пассивного дохода.
-                            План адаптируется под ваши сроки и риск-профиль.
+                        <h2 className="ui-heading-h2">
+                            Цели, которые можно
+                            <br />
+                            закрывать системно
+                        </h2>
+                        <p className="ui-text-t3">
+                            От&nbsp;финансовой подушки и&nbsp;ренты до&nbsp;жилья, бизнеса и&nbsp;пассивного дохода.
+                            <br />
+                            План адаптируется под&nbsp;ваши сроки и&nbsp;риск-профиль.
                         </p>
                     </div>
 
@@ -197,13 +298,33 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart, onLogin }) => {
                 </section>
 
                 <section className="landing-cta">
-                    <h3>Готовы перейти от хаоса к системе?</h3>
-                    <p>Запустите планирование и получите понятную карту действий под ваши цели.</p>
-                    <button type="button" className="landing-btn landing-btn--primary landing-btn--large" onClick={onStart}>
+                    <h2 className="ui-heading-h2">Готовы перейти от хаоса к системе?</h2>
+                    <p>Запустите планирование и&nbsp;получите понятную карту действий под&nbsp;ваши цели.</p>
+                    <button type="button" className="landing-btn landing-btn--secondary landing-btn--large" onClick={onStart}>
                         Начать сейчас <ArrowRight size={18} />
                     </button>
                 </section>
             </main>
+
+            <footer className="landing-footer">
+                <div className="landing-footer__inner">
+                    <div className="landing-footer__left">
+                        <div className="landing-footer__logo">
+                            <img src="/assets/Logo.png" alt="CONOMY Terminal" />
+                        </div>
+                        <div className="landing-footer__links">
+                            <span>© {new Date().getFullYear()} CONOMY Terminal</span>
+                            <span>·</span>
+                            <a href="#" style={{ color: '#4b5563', textDecoration: 'underline', textDecorationThickness: '1px' }}>
+                                Политика конфиденциальности
+                            </a>
+                        </div>
+                    </div>
+                    <div className="landing-footer__right">
+                        <a href="https://bankfuture.ru" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Разработка BankFuture</a>
+                    </div>
+                </div>
+            </footer>
         </div>
     );
 };

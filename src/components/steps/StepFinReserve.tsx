@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import avatarImage from '../../assets/avatar_full.png';
+const AVATAR_IMAGE = '/assets/Avatar.png';
 import type { CJMData } from '../CJMFlow';
 
 interface StepFinReserveProps {
@@ -49,7 +49,7 @@ const StepFinReserve: React.FC<StepFinReserveProps> = ({ data, setData, onNext, 
                 boxShadow: '0 2px 10px rgba(0,0,0,0.04)'
             }}>
                 <img
-                    src={avatarImage}
+                    src={AVATAR_IMAGE}
                     alt="AI"
                     style={{ width: '44px', height: '44px', borderRadius: '12px', objectFit: 'cover', flexShrink: 0 }}
                 />

@@ -5,7 +5,8 @@ import { X, ArrowRight, ChevronLeft } from 'lucide-react';
 import type { CJMData } from '../CJMFlow';
 import type { ClientGoal } from '../../types/client';
 import { GOAL_GALLERY_ITEMS } from '../../utils/GoalImages';
-import avatarImage from '../../assets/avatar_full.png';
+
+const AVATAR_IMAGE = '/assets/Avatar.png';
 
 interface StepGoalSelectionProps {
     data: CJMData;
@@ -150,7 +151,7 @@ const StepGoalSelection: React.FC<StepGoalSelectionProps> = ({ data, setData, on
                             background: '#fff'
                         }}>
                             <img
-                                src={avatarImage}
+                                src={AVATAR_IMAGE}
                                 alt="AI Assistant"
                                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                             />

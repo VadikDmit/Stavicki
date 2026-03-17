@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, PiggyBank, TrendingUp, Send, X, MessageSquare } from 'lucide-react';
 import { getGoalImage } from '../utils/GoalImages';
 import type { Client } from '../types/client';
-import avatarImage from '../assets/avatar_full.png';
+const AVATAR_IMAGE = '/assets/Avatar.png';
 import { aiApi } from '../api/aiApi';
 
 interface PresentPageProps {
@@ -203,7 +203,7 @@ const PresentPage: React.FC<PresentPageProps> = ({ clientData, onViewPlan, onSta
                     }}
                 >
                     <img
-                        src={avatarImage} alt="Anna"
+                        src={AVATAR_IMAGE} alt="Михаил"
                         style={{ width: '40px', height: '40px', borderRadius: '12px', objectFit: 'cover', flexShrink: 0, border: '2px solid #fff', boxShadow: '0 4px 8px rgba(0,0,0,0.08)' }}
                     />
                     <div style={{ flex: 1, minWidth: 0 }}>
@@ -721,8 +721,8 @@ const AIChatModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpe
                     >
                         <div style={{ padding: '20px', borderBottom: '1px solid #eee', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                <img src={avatarImage} style={{ width: '40px', height: '40px', borderRadius: '50%' }} alt="Anna" />
-                                <span style={{ fontWeight: 'bold' }}>Анна</span>
+                                <img src={AVATAR_IMAGE} style={{ width: '40px', height: '40px', borderRadius: '50%' }} alt="Михаил" />
+                                <span style={{ fontWeight: 'bold' }}>Михаил</span>
                             </div>
                             <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer' }}><X size={24} /></button>
                         </div>
@@ -732,7 +732,7 @@ const AIChatModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpe
                                     <MessageContent content={m.content} />
                                 </div>
                             ))}
-                            {isTyping && <div style={{ alignSelf: 'flex-start', padding: '12px 16px', borderRadius: '16px', background: '#f1f5f9' }}>Анна печатает...</div>}
+                            {isTyping && <div style={{ alignSelf: 'flex-start', padding: '12px 16px', borderRadius: '16px', background: '#f1f5f9' }}>Михаил печатает...</div>}
                             <div ref={chatEndRef} />
                         </div>
                         <div style={{ padding: '20px', borderTop: '1px solid #eee', display: 'flex', gap: '12px' }}>

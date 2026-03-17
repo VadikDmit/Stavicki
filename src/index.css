@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-    --primary: #C60C7F;
-    --primary-hover: #a00a68;
+    /* Theme tokens live in App.css (:root). These are aliases for legacy styles here. */
+    --primary: var(--theme-primary);
+    --primary-hover: var(--theme-primary);
     --secondary: #00A8B1;
     --accent-blue: #3B82F6;
     --accent-green: #10B981;
@@ -145,8 +146,22 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-hover);
+    background: var(--theme-gradient);
+    color: #000000;
     transform: translateY(-2px);
+}
+
+.btn-primary:disabled {
+    background-color: var(--theme-disabled);
+    color: rgba(15, 23, 42, 0.45);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-primary:disabled:hover {
+    background-color: var(--theme-disabled);
+    transform: none;
 }
 
 .btn-primary:active {

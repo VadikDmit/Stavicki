@@ -240,6 +240,7 @@ function App() {
                 <LoginPage
                     onLoginSuccess={handleLoginSuccess}
                     onSwitchToRegister={() => setCurrentPage('register')}
+                    onBack={() => setCurrentPage('landing')}
                 />
             </div>
         );
@@ -262,6 +263,7 @@ function App() {
                 <RegisterPage
                     onRegisterSuccess={handleRegisterSuccess}
                     onSwitchToLogin={() => setCurrentPage('login')}
+                    onBack={() => setCurrentPage('landing')}
                 />
             </div>
         );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, LogOut, ChevronRight, ChevronUp, ChevronDown } from 'lucide-react';
-import avatarImage from '../assets/avatar_full.png';
+const AVATAR_IMAGE = '/assets/Avatar.png';
 import { aiApi } from '../api/aiApi';
 import Markdown from 'react-markdown';
 import type { CJMData } from './CJMFlow';
@@ -176,7 +176,7 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                 console.error('Failed to load anketa history', err);
                 setMessages([{
                     id: 'init_error',
-                    text: 'Привет! Я Виктория. Произошла ошибка загрузки истории, но мы можем попытаться продолжить. Напишите что-нибудь.',
+                    text: 'Привет! Я Михаил. Произошла ошибка загрузки истории, но мы можем попытаться продолжить. Напишите что-нибудь.',
                     sender: 'victoria'
                 }]);
                 setCurrentStep('chat');
@@ -252,7 +252,7 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
     const handleGenderSelect = async (gender: 'male' | 'female') => {
         setData(prev => ({ ...prev, gender }));
 
-        // Сначала Виктория отвечает целиком, потом плавно показываем слайдер возраста
+        // Сначала ассистент (Михаил) отвечает целиком, потом плавно показываем слайдер возраста
         await handleSendMessage(
             gender === 'male' ? 'Мужской' : 'Женский',
             undefined,
@@ -284,7 +284,7 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
             desiredMonthlyIncome: (goal.typeId === 1 || goal.typeId === 2) ? 100000 : 0
         };
         setEditingGoal(defaults);
-        // Сначала Виктория проговаривает выбранную цель, потом раскрываем карточку параметров
+        // Сначала ассистент проговаривает выбранную цель, потом раскрываем карточку параметров
         await handleSendMessage(
             `Моя цель: ${goal.title}`,
             'anketaTarget',
@@ -920,10 +920,10 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
             <div className="chat-header">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                     <div style={{ width: '48px', height: '48px', borderRadius: '16px', overflow: 'hidden', border: '2px solid #F0F5F9' }}>
-                        <img src={avatarImage} alt="Victoria" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <img src={AVATAR_IMAGE} alt="Михаил" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                     <div>
-                        <div style={{ fontWeight: '900', fontSize: '18px', color: '#1e293b' }}>Виктория</div>
+                        <div style={{ fontWeight: '900', fontSize: '18px', color: '#1e293b' }}>Михаил</div>
                         <div style={{ fontSize: '13px', color: '#10b981', display: 'flex', alignItems: 'center', gap: '6px' }}>
                             <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981' }} />
                             Ассистент Анны Деньгиной
