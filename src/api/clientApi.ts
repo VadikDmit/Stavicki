@@ -12,6 +12,12 @@ import type { Client } from '../types/client';
 export const API_BASE_URL = (import.meta.env.VITE_API_URL as string | undefined) ?? '/api';
 export const PROJECT_KEY = (import.meta.env.VITE_PROJECT_KEY as string | undefined) ?? '';
 
+function requireProjectKey() {
+    if (!PROJECT_KEY || PROJECT_KEY.trim().length === 0) {
+        throw new Error('PROJECT_KEY_MISSING: Укажите VITE_PROJECT_KEY в переменных окружения (Vercel → Project → Settings → Environment Variables) и сделайте Redeploy.');
+    }
+}
+
 const api = axios.create({
     baseURL: API_BASE_URL,
     headers: {
@@ -24,7 +30,9 @@ api.interceptors.request.use((config) => {
     const token = localStorage.getItem('token');
 
     // Multi-tenancy header
-    config.headers['X-Project-Key'] = PROJECT_KEY;
+    if (PROJECT_KEY) {
+        config.headers['X-Project-Key'] = PROJECT_KEY;
+    }
 
     if (token) {
         config.headers.Authorization = `Bearer ${token}`;
@@ -35,6 +43,7 @@ api.interceptors.request.use((config) => {
 export const clientApi = {
     // --- AUTH ---
     registerFast: async (payload: { email: string, password: string, name?: string }): Promise<any> => {
+        requireProjectKey();
         const response = await api.post('/auth/register-fast', {
             email: payload.email,
             password: payload.password,
@@ -45,6 +54,7 @@ export const clientApi = {
     },
 
     login: async (email: string, password: string): Promise<any> => {
+        requireProjectKey();
         const response = await api.post('/auth/login', {
             email,
             password,
