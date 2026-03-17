@@ -507,8 +507,8 @@ body {
 
 .landing-glass-card {
     height: 100%;
-    width: calc(100% + 72px);
-    margin-right: -72px;
+    width: 100%;
+    max-width: 100%;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.35);
     background: var(--gradient-green);
