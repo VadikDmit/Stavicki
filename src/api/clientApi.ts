@@ -1,9 +1,16 @@
 import axios from 'axios';
 import type { Client } from '../types/client';
 
-// Только из env (Vercel Variables / .env). В коде не храним URL и ключ.
-export const API_BASE_URL = import.meta.env.NEXT_PUBLIC_API_URL ?? '';
-export const PROJECT_KEY = import.meta.env.NEXT_PUBLIC_PROJECT_KEY ?? '';
+/**
+ * Vercel rewrites `/api/*` -> backend (см. `vercel.json`), поэтому в проде
+ * дефолтный baseURL должен быть `/api`.
+ *
+ * Для локальной разработки можно переопределить через переменные окружения:
+ * - VITE_API_URL
+ * - VITE_PROJECT_KEY
+ */
+export const API_BASE_URL = (import.meta.env.VITE_API_URL as string | undefined) ?? '/api';
+export const PROJECT_KEY = (import.meta.env.VITE_PROJECT_KEY as string | undefined) ?? '';
 
 const api = axios.create({
     baseURL: API_BASE_URL,

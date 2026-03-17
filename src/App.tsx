@@ -157,7 +157,7 @@ function App() {
 
     const handleAddGoal = useCallback(async (goal: any) => {
         if (!API_BASE_URL) {
-            alert('Не удалось добавить цель: не настроен адрес API. Укажите NEXT_PUBLIC_API_URL в .env');
+            alert('Не удалось добавить цель: не настроен адрес API. Укажите VITE_API_URL в .env');
             return;
         }
         setLoadingPlan(true);
@@ -181,7 +181,7 @@ function App() {
                 return;
             }
             if (status === 404) {
-                alert('Не удалось добавить цель: сервер не найден. Проверьте NEXT_PUBLIC_API_URL и что бэкенд запущен.');
+                alert('Не удалось добавить цель: сервер не найден. Проверьте VITE_API_URL и что бэкенд запущен.');
                 return;
             }
             if (status === 400 || status === 422) {
