@@ -593,14 +593,11 @@ body {
 
 .landing-feature-card h4 {
     margin: 12px 0 8px;
-    font-size: 17px;
 }
 
 .landing-feature-card p {
     margin: 0;
-    font-size: 14px;
     color: #475569;
-    line-height: 1.55;
 }
 
 .landing-growth-grid {
@@ -619,21 +616,19 @@ body {
 
 .landing-growth-card__top {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
     color: #111827;
 }
 
 .landing-growth-card__top h4 {
     margin: 0;
-    font-size: 16px;
 }
 
 .landing-growth-card p {
     margin: 12px 0 0;
-    font-size: 14px;
     color: #475569;
-    line-height: 1.55;
 }
 
 .landing-goals-grid {
