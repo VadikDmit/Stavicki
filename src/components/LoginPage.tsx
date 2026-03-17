@@ -102,7 +102,18 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, onSwitchToRegiste
                     <div className="input-group">
                         <label className="label">Электронная почта</label>
                         <div style={{ position: 'relative' }}>
-                            <Mail style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} size={18} />
+                            <Mail
+                                style={{
+                                    position: 'absolute',
+                                    left: '12px',
+                                    top: '50%',
+                                    transform: 'translateY(-50%)',
+                                    color: 'var(--input-border)',
+                                    zIndex: 2,
+                                    pointerEvents: 'none'
+                                }}
+                                size={18}
+                            />
                             <input
                                 type="email"
                                 value={email}
@@ -117,7 +128,18 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess, onSwitchToRegiste
                     <div className="input-group">
                         <label className="label">Пароль</label>
                         <div style={{ position: 'relative' }}>
-                            <Lock style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} size={18} />
+                            <Lock
+                                style={{
+                                    position: 'absolute',
+                                    left: '12px',
+                                    top: '50%',
+                                    transform: 'translateY(-50%)',
+                                    color: 'var(--input-border)',
+                                    zIndex: 2,
+                                    pointerEvents: 'none'
+                                }}
+                                size={18}
+                            />
                             <input
                                 type="password"
                                 value={password}

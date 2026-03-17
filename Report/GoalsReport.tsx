@@ -53,7 +53,7 @@ export const GoalsReport: React.FC<GoalsReportProps> = ({
       <header className="goals-report__cover">
         <div className="goals-report__cover-bg" />
         <div className="goals-report__cover-logo-center">
-          <img src="/Report/assets/logo.png" alt="Bank Future" className="goals-report__cover-logo" />
+          <img src="/assets/Logo.png" alt="Terminal" className="goals-report__cover-logo" />
         </div>
         <div className="goals-report__cover-title-block">
           <h1 className="goals-report__cover-title">

@@ -94,13 +94,13 @@ const ResultPageDesign: React.FC<ResultPageDesignProps> = ({
       try {
         await aiApi.sendStreamingMessage(
           'futurePFP',
-          'Привет! Я подготовила финансовый план. Расскажи мне кратко, что ты о нем думаешь?',
+          'Привет! Я подготовил финансовый план. Расскажи мне кратко, что ты о нём думаешь?',
           (chunk) => setAiMessage(chunk),
           () => setIsAiTyping(false)
         );
       } catch (err) {
         console.error('AI Greeting error', err);
-        setAiMessage('Я подготовила для вас финансовый план с учетом ваших целей и ресурсов. Давайте обсудим его?');
+        setAiMessage('Я подготовил для вас финансовый план с учётом ваших целей и ресурсов. Давайте обсудим его?');
         setIsAiTyping(false);
       }
     };
@@ -323,7 +323,7 @@ const ResultPageDesign: React.FC<ResultPageDesignProps> = ({
                 overflow: 'hidden',
                 background: '#fff',
                 boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
-                border: '2px solid #C60C7F'
+                border: '2px solid #F0F5F9'
               }}>
                 <img src={AVATAR_IMAGE} alt="Михаил" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
@@ -339,23 +339,20 @@ const ResultPageDesign: React.FC<ResultPageDesignProps> = ({
                 {['Что такое ПДС?', 'Какие гарантии?', 'Какие риски?', 'Как получить вычет?', 'С чего начать?'].map((q, i) => (
                   <button
                     key={i}
+                    className="btn-secondary"
                     style={{
+                      width: 'auto',
                       padding: '10px 20px',
-                      background: 'rgba(198, 12, 127, 0.1)',
-                      border: '1px solid rgba(198, 12, 127, 0.2)',
                       borderRadius: '100px',
-                      color: '#1e293b',
+                      color: 'var(--text-main)',
                       fontSize: '13px',
                       fontWeight: '600',
-                      cursor: 'pointer',
                       transition: 'all 0.2s',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = '#C60C7F';
                       e.currentTarget.style.transform = 'translateY(-2px)';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.background = 'rgba(198, 12, 127, 0.1)';
                       e.currentTarget.style.transform = 'translateY(0)';
                     }}
                   >
@@ -367,34 +364,37 @@ const ResultPageDesign: React.FC<ResultPageDesignProps> = ({
               <div style={{ position: 'relative', maxWidth: '600px' }}>
                 <input
                   type="text"
-                  placeholder="Задайте свой вопрос Виктории..."
+                  placeholder="Задайте свой вопрос Михаилу..."
                   style={{
                     width: '100%',
                     padding: '16px 60px 16px 24px',
                     borderRadius: '20px',
                     border: '1px solid #e2e8f0',
-                    fontSize: '15px',
+                    fontSize: '16px',
+                    lineHeight: '1.6',
+                    fontWeight: 400,
                     outline: 'none',
                     background: '#f8fafc',
                     boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.02)'
                   }}
                 />
-                <button style={{
-                  position: 'absolute',
-                  right: '8px',
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  background: '#C60C7F',
-                  border: 'none',
-                  borderRadius: '14px',
-                  width: '44px',
-                  height: '44px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  cursor: 'pointer',
-                  boxShadow: '0 4px 10px rgba(198,12,127,0.3)'
-                }}>
+                <button
+                  className="btn-primary"
+                  style={{
+                    position: 'absolute',
+                    right: '8px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    width: '44px',
+                    height: '44px',
+                    padding: 0,
+                    borderRadius: '14px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 4px 10px rgba(0,0,0,0.10)'
+                  }}
+                >
                   <Send size={20} />
                 </button>
               </div>
@@ -495,17 +495,23 @@ const ResultPageDesign: React.FC<ResultPageDesignProps> = ({
               borderRadius: '24px', border: '2px dashed #E5E7EB', background: '#F9FAFB', minHeight: '280px',
               display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'all 0.2s'
             }}
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#C60C7F'; e.currentTarget.style.background = '#fff'; }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--theme-primary)'; e.currentTarget.style.background = '#fff'; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#E5E7EB'; e.currentTarget.style.background = '#F9FAFB'; }}>
-              <Plus size={32} color="#C2185B" />
-              <span style={{ color: '#C2185B', fontSize: '16px', fontWeight: '500' }}>+ Добавить цель</span>
+              <Plus size={32} color="var(--theme-primary)" />
+              <span style={{ color: 'var(--theme-primary)', fontSize: '16px', fontWeight: '500' }}>+ Добавить цель</span>
             </button>
           </div>
 
           <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-            <button onClick={onGoToReport} style={{
-              background: '#C2185B', color: '#fff', border: 'none', borderRadius: '100px', padding: '16px 48px',
-              fontSize: '16px', fontWeight: '600', cursor: 'pointer', maxWidth: '300px', width: '100%', boxShadow: '0 4px 12px rgba(194,24,91,0.3)'
+            <button className="btn-primary" onClick={onGoToReport} style={{
+              borderRadius: '100px',
+              padding: '16px 48px',
+              fontSize: '16px',
+              fontWeight: '600',
+              cursor: 'pointer',
+              maxWidth: '300px',
+              width: '100%',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.10)'
             }}>
               Перейти в отчет
             </button>

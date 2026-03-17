@@ -833,9 +833,9 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                     </div>
                     <div>
                         <div style={{ fontWeight: '900', fontSize: '18px', color: '#1e293b' }}>Михаил</div>
-                        <div style={{ fontSize: '13px', color: '#10b981', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981' }} />
-                            Ассистент Анны Деньгиной
+                        <div style={{ fontSize: '13px', color: 'var(--theme-accent)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'var(--theme-accent)' }} />
+                            Ассистент Максима Ставицкого
                         </div>
                     </div>
                 </div>
@@ -886,28 +886,16 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
                                     <button
                                         onClick={() => handleGenderSelect('male')}
-                                        className="btn-secondary"
-                                        style={{
-                                            padding: '24px',
-                                            borderRadius: '24px',
-                                            fontSize: '18px',
-                                            ...(data.gender === 'male' ? { background: '#fff', color: 'var(--text-main)', border: '2px solid var(--theme-primary)' } : {})
-                                        }}
+                                        className={`btn-secondary gender-option-btn ${data.gender === 'male' ? 'gender-option-btn--active' : ''}`}
                                     >
-                                        <span style={{ fontSize: '32px' }}>👨</span>
+                                        <span className="gender-option-btn__emoji">👨</span>
                                         Мужской
                                     </button>
                                     <button
                                         onClick={() => handleGenderSelect('female')}
-                                        className="btn-secondary"
-                                        style={{
-                                            padding: '24px',
-                                            borderRadius: '24px',
-                                            fontSize: '18px',
-                                            ...(data.gender === 'female' ? { background: '#fff', color: 'var(--text-main)', border: '2px solid var(--theme-primary)' } : {})
-                                        }}
+                                        className={`btn-secondary gender-option-btn ${data.gender === 'female' ? 'gender-option-btn--active' : ''}`}
                                     >
-                                        <span style={{ fontSize: '32px' }}>👩</span>
+                                        <span className="gender-option-btn__emoji">👩</span>
                                         Женский
                                     </button>
                                 </div>
@@ -1110,6 +1098,7 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                                 </div>
 
                                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '12px' }}>
+                                    <div style={{ width: 240 }}>
                                     <button
                                         onClick={async () => {
                                             setData(prev => ({
@@ -1155,11 +1144,12 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                                                 setIsTyping(false);
                                             }
                                         }}
-                                        className="btn-secondary"
-                                        style={{ fontSize: '14px' }}
+                                        className="btn-primary"
+                                        style={{ fontSize: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}
                                     >
                                         Далее <ChevronRight size={18} style={{ marginLeft: '6px' }} />
                                     </button>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>
@@ -1386,6 +1376,7 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                                 </div>
 
                                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '8px' }}>
+                                    <div style={{ width: 240 }}>
                                     <button
                                         onClick={async () => {
                                             setData(prev => ({
@@ -1426,11 +1417,12 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                                                 setIsTyping(false);
                                             }
                                         }}
-                                        className="btn-secondary"
-                                        style={{ fontSize: '14px' }}
+                                        className="btn-primary"
+                                        style={{ fontSize: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}
                                     >
                                         Далее <ChevronRight size={18} style={{ marginLeft: '6px' }} />
                                     </button>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>
@@ -1480,6 +1472,7 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                                 </div>
 
                                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '8px' }}>
+                                    <div style={{ width: 240 }}>
                                     <button
                                         onClick={async () => {
                                             setMessages(prev => [...prev, {
@@ -1516,11 +1509,12 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                                                 setIsTyping(false);
                                             }
                                         }}
-                                        className="btn-secondary"
-                                        style={{ fontSize: '14px' }}
+                                        className="btn-primary"
+                                        style={{ fontSize: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}
                                     >
                                         Далее <ChevronRight size={18} style={{ marginLeft: '6px' }} />
                                     </button>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

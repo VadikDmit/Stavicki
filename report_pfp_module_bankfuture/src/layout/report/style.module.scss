@@ -51,7 +51,7 @@
     }
 
     &__red {
-      background: linear-gradient(90deg, #B12087 0%, #933D92 100%);
+      background: var(--theme-gradient);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;

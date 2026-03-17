@@ -48,7 +48,7 @@ const MessageContent: React.FC<{ content: string; isShort?: boolean }> = ({ cont
                 if (trimmed.startsWith('* ') || /^\d+\.\s/.test(trimmed)) {
                     return (
                         <div key={idx} style={{ display: 'flex', gap: '10px', paddingLeft: '4px', alignItems: 'flex-start' }}>
-                            <div style={{ color: '#D946EF', fontWeight: '900', marginTop: '2px' }}>•</div>
+                            <div style={{ color: 'var(--theme-primary)', fontWeight: '900', marginTop: '2px' }}>•</div>
                             <div style={{ flex: 1, lineHeight: '1.6' }}>{renderedLine.map((p, i) => <React.Fragment key={i}>{typeof p === 'string' ? p.replace(/^(\* |\d+\.\s)/, '') : p}</React.Fragment>)}</div>
                         </div>
                     );
@@ -208,7 +208,7 @@ const PresentPage: React.FC<PresentPageProps> = ({ clientData, onViewPlan, onSta
                     />
                     <div style={{ flex: 1, minWidth: 0 }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '4px' }}>
-                            <div style={{ fontSize: '10px', fontWeight: '900', color: '#D946EF', textTransform: 'uppercase', letterSpacing: '0.8px' }}>ИИ-Сводка</div>
+                            <div style={{ fontSize: '10px', fontWeight: '900', color: '#000', textTransform: 'uppercase', letterSpacing: '0.8px' }}>ИИ-Сводка</div>
                             <div style={{ padding: '1px 6px', background: '#f0fdf4', color: '#16a34a', borderRadius: '100px', fontSize: '9px', fontWeight: '800' }}>ONLINE</div>
                         </div>
                         {isSummaryLoading && !aiSummary ? (
@@ -222,8 +222,8 @@ const PresentPage: React.FC<PresentPageProps> = ({ clientData, onViewPlan, onSta
                                     <MessageContent content={aiSummary.length > MAX_SUMMARY_PREVIEW_LENGTH ? (aiSummary.slice(0, MAX_SUMMARY_PREVIEW_LENGTH).trim().replace(/\s+\S*$/, '') || aiSummary.slice(0, MAX_SUMMARY_PREVIEW_LENGTH)) + '…' : aiSummary} isShort />
                                 </div>
                                 {aiSummary.length > MAX_SUMMARY_PREVIEW_LENGTH && (
-                                    <div style={{ marginTop: '10px', fontSize: '12px', color: '#D946EF', fontWeight: '700' }}>
-                                        Открыть чат — весь текст и общение с Анной →
+                                    <div style={{ marginTop: '10px', fontSize: '12px', color: '#000', fontWeight: '700' }}>
+                                        Открыть чат — весь текст и общение с Михаилом →
                                     </div>
                                 )}
                             </>
@@ -244,8 +244,21 @@ const PresentPage: React.FC<PresentPageProps> = ({ clientData, onViewPlan, onSta
                     <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'linear-gradient(135deg, #f8fafc, #f1f5f9)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <MessageSquare size={16} color="#94a3b8" />
                     </div>
-                    <span style={{ color: '#94a3b8', fontSize: '15px', fontWeight: '500' }}>Задать вопрос Анне о финансовом плане...</span>
-                    <div style={{ marginLeft: 'auto', width: '36px', height: '36px', borderRadius: '50%', background: '#C60C7F', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 10px rgba(198, 12, 127, 0.3)' }}>
+                    <span className="ui-text-t3" style={{ color: '#94a3b8' }}>Задать вопрос Михаилу о финансовом плане...</span>
+                    <div
+                        className="btn-primary"
+                        style={{
+                            marginLeft: 'auto',
+                            width: '36px',
+                            height: '36px',
+                            borderRadius: '50%',
+                            padding: 0,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            boxShadow: '0 4px 10px rgba(0,0,0,0.10)'
+                        }}
+                    >
                         <Send size={16} color="#000" />
                     </div>
                 </motion.div>
@@ -512,7 +525,7 @@ const PresentPage: React.FC<PresentPageProps> = ({ clientData, onViewPlan, onSta
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <h3 style={{ fontSize: '20px', fontWeight: '900', color: '#1e293b' }}>Инвестиционные цели</h3>
-                    <button onClick={() => onViewPlan(clientData!, goalsSummary)} style={{ background: 'none', border: 'none', color: '#D946EF', fontWeight: '800', cursor: 'pointer', fontSize: '14px' }}>Смотреть всё</button>
+                    <button onClick={() => onViewPlan(clientData!, goalsSummary)} style={{ background: 'none', border: 'none', color: '#000', fontWeight: '800', cursor: 'pointer', fontSize: '14px' }}>Смотреть всё</button>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                     <div className="presentGoalsGrid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
@@ -728,7 +741,17 @@ const AIChatModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpe
                         </div>
                         <div style={{ flex: 1, overflowY: 'auto', padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
                             {messages.map((m, i) => (
-                                <div key={i} style={{ alignSelf: m.role === 'user' ? 'flex-end' : 'flex-start', maxWidth: '80%', padding: '12px 16px', borderRadius: '16px', background: m.role === 'user' ? '#D946EF' : '#f1f5f9', color: m.role === 'user' ? '#fff' : '#333' }}>
+                                <div
+                                    key={i}
+                                    style={{
+                                        alignSelf: m.role === 'user' ? 'flex-end' : 'flex-start',
+                                        maxWidth: '80%',
+                                        padding: '12px 16px',
+                                        borderRadius: '16px',
+                                        background: m.role === 'user' ? 'var(--theme-gradient)' : '#f1f5f9',
+                                        color: m.role === 'user' ? '#fff' : '#333'
+                                    }}
+                                >
                                     <MessageContent content={m.content} />
                                 </div>
                             ))}
@@ -740,10 +763,12 @@ const AIChatModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpe
                                 value={inputValue}
                                 onChange={(e) => setInputValue(e.target.value)}
                                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                                placeholder="Спросите Анну..."
+                                placeholder="Спросите Михаила..."
                                 style={{ flex: 1, border: '1px solid #ddd', borderRadius: '12px', padding: '10px 16px', outline: 'none' }}
                             />
-                            <button onClick={handleSend} style={{ background: '#D946EF', border: 'none', color: '#fff', borderRadius: '12px', padding: '0 20px', cursor: 'pointer' }}><Send size={20} /></button>
+                            <button className="btn-primary" onClick={handleSend} style={{ borderRadius: '12px', padding: '0 20px', cursor: 'pointer', width: 'auto' }}>
+                                <Send size={20} />
+                            </button>
                         </div>
                     </motion.div>
                 </div>

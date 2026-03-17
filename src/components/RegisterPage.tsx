@@ -160,7 +160,9 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onSwitch
                                             left: '12px',
                                             top: '50%',
                                             transform: 'translateY(-50%)',
-                                            color: 'var(--text-muted)'
+                                            color: 'var(--input-border)',
+                                            zIndex: 2,
+                                            pointerEvents: 'none'
                                         }}
                                         size={18}
                                     />
@@ -183,7 +185,9 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onSwitch
                                             left: '12px',
                                             top: '50%',
                                             transform: 'translateY(-50%)',
-                                            color: 'var(--text-muted)'
+                                            color: 'var(--input-border)',
+                                            zIndex: 2,
+                                            pointerEvents: 'none'
                                         }}
                                         size={18}
                                     />
@@ -207,7 +211,9 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onSwitch
                                             left: '12px',
                                             top: '50%',
                                             transform: 'translateY(-50%)',
-                                            color: 'var(--text-muted)'
+                                            color: 'var(--input-border)',
+                                            zIndex: 2,
+                                            pointerEvents: 'none'
                                         }}
                                         size={18}
                                     />
@@ -232,7 +238,9 @@ const RegisterPage: React.FC<RegisterPageProps> = ({ onRegisterSuccess, onSwitch
                                             left: '12px',
                                             top: '50%',
                                             transform: 'translateY(-50%)',
-                                            color: 'var(--text-muted)'
+                                            color: 'var(--input-border)',
+                                            zIndex: 2,
+                                            pointerEvents: 'none'
                                         }}
                                         size={18}
                                     />

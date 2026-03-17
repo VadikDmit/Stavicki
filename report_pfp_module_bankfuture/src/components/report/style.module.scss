@@ -321,7 +321,7 @@
 
     font-size: 10px;
     font-weight: 600;
-    color: #933D92;
+    color: var(--theme-primary);
   }
 
   &_subtitle {
@@ -339,7 +339,7 @@
   & thead tr td {
     padding-block-end: 9px;
 
-    border-bottom: 1px solid #E27CC4;
+    border-bottom: 1px solid rgba(193, 229, 107, 0.55);
 
     font-size: 10px;
     font-weight: 500;

@@ -21,12 +21,13 @@ const Header: React.FC<HeaderProps> = ({ activePage = 'present', onNavigate, onL
 
     return (
         <header style={{
-            height: '56px',
+            minHeight: '56px',
             background: '#fff',
             borderBottom: '1px solid #eee',
             position: 'sticky',
             top: 0,
             zIndex: 100,
+            paddingTop: '6px',
         }}>
             <div style={{
                 maxWidth: '1200px',
@@ -66,14 +67,15 @@ const Header: React.FC<HeaderProps> = ({ activePage = 'present', onNavigate, onL
                             href="#"
                             onClick={(e) => handleNavClick(page, e)}
                             style={{
-                                color: isActive ? '#fff' : '#666',
+                                color: isActive ? '#000' : '#666',
                                 fontWeight: isActive ? '700' : '500',
                                 textDecoration: 'none',
-                                fontSize: '13px',
+                                fontSize: '16px',
+                                lineHeight: '1.6',
                                 cursor: 'pointer',
                                 padding: '6px 10px',
                                 borderRadius: '20px',
-                                background: isActive ? '#C60C7F' : 'transparent',
+                                background: isActive ? 'var(--theme-primary)' : 'transparent',
                                 transition: 'all 0.2s ease',
                                 whiteSpace: 'nowrap',
                             }}

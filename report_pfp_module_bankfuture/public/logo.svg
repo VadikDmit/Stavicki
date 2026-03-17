@@ -14,16 +14,16 @@
 <stop offset="1" stop-color="#E4AFCB"/>
 </linearGradient>
 <linearGradient id="paint2_linear_1201_39" x1="25.2774" y1="25.1514" x2="52.1858" y2="25.1514" gradientUnits="userSpaceOnUse">
-<stop stop-color="#B12087"/>
-<stop offset="1" stop-color="#933D92"/>
+<stop stop-color="#C1E56B"/>
+<stop offset="1" stop-color="#8BC34A"/>
 </linearGradient>
 <linearGradient id="paint3_linear_1201_39" x1="20.4784" y1="38.5344" x2="46.9853" y2="38.5344" gradientUnits="userSpaceOnUse">
-<stop stop-color="#B12087"/>
-<stop offset="1" stop-color="#933D92"/>
+<stop stop-color="#C1E56B"/>
+<stop offset="1" stop-color="#8BC34A"/>
 </linearGradient>
 <linearGradient id="paint4_linear_1201_39" x1="15.7299" y1="51.7356" x2="31.1569" y2="51.7356" gradientUnits="userSpaceOnUse">
-<stop stop-color="#B12087"/>
-<stop offset="1" stop-color="#933D92"/>
+<stop stop-color="#C1E56B"/>
+<stop offset="1" stop-color="#8BC34A"/>
 </linearGradient>
 </defs>
 </svg>

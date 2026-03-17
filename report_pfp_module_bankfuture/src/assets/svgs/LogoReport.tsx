@@ -206,8 +206,8 @@ const LogoReportSVG = (props) => (
                 y2 = { 6.58 }
                 gradientUnits = 'userSpaceOnUse'
             >
-                <stop stopColor = '#B12087' />
-                <stop offset = { 1 } stopColor = '#933D92' />
+                <stop stopColor = '#C1E56B' />
+                <stop offset = { 1 } stopColor = '#8BC34A' />
             </linearGradient>
             <linearGradient
                 id = 'e'
@@ -217,8 +217,8 @@ const LogoReportSVG = (props) => (
                 y2 = { 10.081 }
                 gradientUnits = 'userSpaceOnUse'
             >
-                <stop stopColor = '#B12087' />
-                <stop offset = { 1 } stopColor = '#933D92' />
+                <stop stopColor = '#C1E56B' />
+                <stop offset = { 1 } stopColor = '#8BC34A' />
             </linearGradient>
             <linearGradient
                 id = 'f'
@@ -228,8 +228,8 @@ const LogoReportSVG = (props) => (
                 y2 = { 13.534 }
                 gradientUnits = 'userSpaceOnUse'
             >
-                <stop stopColor = '#B12087' />
-                <stop offset = { 1 } stopColor = '#933D92' />
+                <stop stopColor = '#C1E56B' />
+                <stop offset = { 1 } stopColor = '#8BC34A' />
             </linearGradient>
             <clipPath id = 'g'>
                 <path fill = '#fff' d = 'M0 0h24v19H0z' />

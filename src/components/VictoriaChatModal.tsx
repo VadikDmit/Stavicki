@@ -181,10 +181,10 @@ const VictoriaChatModal: React.FC<VictoriaChatModalProps> = ({
                                         borderRadius: '20px',
                                         fontSize: '14px',
                                         lineHeight: '1.5',
-                                        background: m.sender === 'victoria' ? '#fff' : '#C60C7F',
+                                        background: m.sender === 'victoria' ? '#fff' : 'var(--theme-primary)',
                                         color: m.sender === 'victoria' ? '#1e293b' : '#000',
                                         border: m.sender === 'victoria' ? '1px solid #e2e8f0' : 'none',
-                                        boxShadow: m.sender === 'victoria' ? '0 2px 4px rgba(0,0,0,0.02)' : '0 4px 12px rgba(198,12,127,0.2)',
+                                        boxShadow: m.sender === 'victoria' ? '0 2px 4px rgba(0,0,0,0.02)' : '0 4px 12px rgba(193,229,107,0.25)',
                                         borderBottomLeftRadius: m.sender === 'victoria' ? '4px' : '20px',
                                         borderBottomRightRadius: m.sender === 'user' ? '4px' : '20px',
                                     }}>
@@ -208,14 +208,16 @@ const VictoriaChatModal: React.FC<VictoriaChatModalProps> = ({
                                     value={inputValue}
                                     onChange={(e) => setInputValue(e.target.value)}
                                     onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                                    placeholder="Задайте вопрос Виктории..."
+                                    placeholder="Задайте вопрос Михаилу..."
                                     style={{
                                         width: '100%',
                                         padding: '14px 50px 14px 20px',
                                         borderRadius: '16px',
                                         border: '1px solid #e2e8f0',
                                         outline: 'none',
-                                        fontSize: '14px',
+                                        fontSize: '16px',
+                                        lineHeight: '1.6',
+                                        fontWeight: 400,
                                         background: '#f8fafc'
                                     }}
                                 />
@@ -227,7 +229,7 @@ const VictoriaChatModal: React.FC<VictoriaChatModalProps> = ({
                                         right: '8px',
                                         top: '50%',
                                         transform: 'translateY(-50%)',
-                                        background: '#C60C7F',
+                                        background: 'var(--theme-primary)',
                                         border: 'none',
                                         borderRadius: '12px',
                                         width: '36px',

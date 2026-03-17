@@ -29,11 +29,11 @@ const LoanRefinancingReportComponent = ({ number, target }: GoalReportType) => {
                             <ul className={style.footer__list} style={{ width: '100%', flexDirection: 'column', marginBlockEnd: 0 }}>
                                 <li className={style.footer__list_item} style={{ display: 'flex', marginBlockEnd: 5 }}>
                                     <p style={{ textAlign: 'left' }}>Единовременное погашение</p>
-                                    <span style={{ marginInlineStart: 10, inlineSize: 'auto', textAlign: 'center', color: '#B12087' }}>{fmt(target.initialCapital || 0)}</span>
+                                    <span style={{ marginInlineStart: 10, inlineSize: 'auto', textAlign: 'center', color: 'var(--theme-primary)' }}>{fmt(target.initialCapital || 0)}</span>
                                 </li>
                                 <li className={style.footer__list_item} style={{ display: 'flex' }}>
                                     <p style={{ textAlign: 'left' }}>Дополнительное погашение</p>
-                                    <span style={{ marginInlineStart: 10, inlineSize: 'auto', textAlign: 'center', color: '#B12087' }}>{fmt(target.initialReplenishment || 0)}</span>
+                                    <span style={{ marginInlineStart: 10, inlineSize: 'auto', textAlign: 'center', color: 'var(--theme-primary)' }}>{fmt(target.initialReplenishment || 0)}</span>
                                 </li>
                             </ul>
                         </p>

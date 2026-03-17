@@ -52,7 +52,7 @@ const MortgageHouseReportComponent = ({ number, target }: GoalReportType) => {
             <div className={style.footer} style={{ marginBlockStart: 30, alignItems: 'flex-start' }}>
                 <div className={style.footer_chart}><Line data={dataChart} options={options} /></div>
                 <ul className={style.footer__list} style={{ width: '100%', marginBlockEnd: 40 }}>
-                    <li className={style.footer__list_item}><p style={{ textAlign: 'left' }}>Всего выплачено % по кредиту</p><span style={{ textAlign: 'left', color: '#B12087' }}>{((target.initialReplenishment || 0) * target.months - ((target.cost || 0) - (target.initialCapital || 0))).toLocaleString('ru-RU', { style: 'currency', currency: target.currency || 'RUB', maximumFractionDigits: 0 })}</span></li>
+                    <li className={style.footer__list_item}><p style={{ textAlign: 'left' }}>Всего выплачено % по кредиту</p><span style={{ textAlign: 'left', color: 'var(--theme-primary)' }}>{((target.initialReplenishment || 0) * target.months - ((target.cost || 0) - (target.initialCapital || 0))).toLocaleString('ru-RU', { style: 'currency', currency: target.currency || 'RUB', maximumFractionDigits: 0 })}</span></li>
                 </ul>
             </div>
         </ReportLayout>

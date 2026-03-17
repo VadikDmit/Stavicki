@@ -183,7 +183,7 @@ const MyPlansPage: React.FC<MyPlansPageProps> = ({ onCreatePlan, onViewPlan, aut
                         width: '80px',
                         height: '80px',
                         borderRadius: '20px',
-                        background: 'linear-gradient(135deg, #C60C7F, #e040a8)',
+                        background: 'var(--theme-gradient)',
                         display: 'inline-flex',
                         alignItems: 'center',
                         justifyContent: 'center',
