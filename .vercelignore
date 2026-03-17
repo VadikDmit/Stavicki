@@ -1,0 +1,18 @@
+node_modules
+dist
+.git
+.vercel
+
+# Local notes/docs (not needed for runtime)
+docs
+api_docs
+frontend-figma
+scripts
+*.md
+*.yaml
+*.yml
+
+# Large local artifacts
+*.pdf
+report_pfp_temp
+
