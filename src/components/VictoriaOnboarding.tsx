@@ -497,36 +497,13 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                     background: rgba(255, 255, 255, 0.7);
                     color: #334155;
                     border: 1px solid rgba(255, 255, 255, 0.9);
-                    border-left: 3px solid #C60C7F;
+                    border-left: 3px solid var(--theme-accent);
                     border-bottom-left-radius: 4px;
                     padding-left: 28px; /* контент и цифры не перекрываются фиолетовой линией */
                 }
 
                 .goal-selection-bubble {
                     max-width: 100%;
-                }
-                .goal-selection-bubble .goal-selection-next-btn.btn-primary {
-                    background: #C60C7F !important;
-                    color: #FFFFFF !important;
-                    border: none !important;
-                    width: 240px !important;
-                    height: 52px !important;
-                    box-shadow: none;
-                }
-                .goal-selection-bubble .goal-selection-next-btn.btn-primary:hover {
-                    background: #a00a68 !important;
-                    color: #FFFFFF !important;
-                    box-shadow: 0 6px 20px rgba(198, 12, 127, 0.35);
-                }
-
-                .anketa-about-self .anketa-dalee-btn.btn-primary {
-                    background: #C60C7F !important;
-                    color: #fff !important;
-                    border: none !important;
-                }
-                .anketa-about-self .anketa-dalee-btn.btn-primary:hover {
-                    background: #a00a68 !important;
-                    color: #fff !important;
                 }
 
                 /* Пузырь с параметрами (возраст, деньги и т.п.) — тянем почти на всю ширину */
@@ -540,30 +517,7 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                     flex-shrink: 0;
                 }
 
-                .message-bubble .btn-primary {
-                    width: auto !important;
-                    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 100%) !important;
-                    color: #0f172a !important;
-                    border: 1px solid rgba(255, 255, 255, 0.8) !important;
-                    box-shadow: 0 4px 15px rgba(0,0,0,0.05), inset 0 2px 5px rgba(255,255,255,1) !important;
-                    backdrop-filter: blur(10px) !important;
-                    font-weight: 800 !important;
-                    text-transform: uppercase;
-                    letter-spacing: 0.5px;
-                    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
-                }
                 
-                .message-bubble .btn-primary:hover {
-                    box-shadow: 0 8px 25px rgba(198, 12, 127, 0.30), inset 0 2px 5px rgba(255,255,255,1) !important;
-                    border-color: rgba(198, 12, 127, 0.60) !important;
-                    transform: translateY(-2px) !important;
-                    color: #C60C7F !important;
-                }
-                
-                .message-bubble .btn-primary:active {
-                    transform: translateY(1px) !important;
-                    box-shadow: 0 2px 10px rgba(198, 12, 127, 0.20) !important;
-                }
 
                 .message-bubble input[type="range"] {
                     -webkit-appearance: none;
@@ -583,16 +537,16 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                     width: 28px;
                     height: 28px;
                     background: #fff;
-                    border: 3px solid #C60C7F;
+                    border: 3px solid var(--theme-primary);
                     border-radius: 50%;
                     cursor: pointer;
-                    box-shadow: 0 4px 12px rgba(198, 12, 127, 0.35);
+                    box-shadow: 0 4px 12px rgba(193, 229, 107, 0.35);
                     transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.2s ease;
                 }
                 
                 .message-bubble input[type="range"]::-webkit-slider-thumb:hover {
                     transform: scale(1.15);
-                    box-shadow: 0 6px 16px rgba(198, 12, 127, 0.45);
+                    box-shadow: 0 6px 16px rgba(193, 229, 107, 0.45);
                 }
                 
                 .message-bubble input[type="range"]::-moz-range-thumb {
@@ -600,9 +554,9 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                     height: 28px;
                     border-radius: 50%;
                     background: #fff;
-                    border: 3px solid #C60C7F;
+                    border: 3px solid var(--theme-primary);
                     cursor: pointer;
-                    box-shadow: 0 4px 12px rgba(198, 12, 127, 0.35);
+                    box-shadow: 0 4px 12px rgba(193, 229, 107, 0.35);
                 }
 
                 .message-user {
@@ -658,7 +612,7 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                     width: 44px;
                     height: 44px;
                     border-radius: 50%;
-                    background: #C60C7F;
+                    background: var(--theme-primary);
                     border: none;
                     display: flex;
                     align-items: center;
@@ -701,52 +655,7 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                 }
                 .exit-btn:active { transform: translateY(0); }
                 
-                .btn-primary {
-                    background: #C60C7F;
-                    color: #fff;
-                    font-weight: 800;
-                    border: none;
-                    cursor: pointer;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                    box-shadow: 0 4px 15px rgba(198, 12, 127, 0.3);
-                }
-                .btn-primary:hover:not(:disabled) {
-                    transform: translateY(-2px);
-                    box-shadow: 0 8px 25px rgba(198, 12, 127, 0.4);
-                }
-                .btn-primary:active { transform: translateY(0); }
-                .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
                 
-                .btn-secondary {
-                    width: 240px;
-                    height: 52px;
-                    background: #fff;
-                    border: 2px solid #C60C7F;
-                    color: #C60C7F;
-                    font-weight: 700;
-                    cursor: pointer;
-                    transition: all 0.2s ease;
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    gap: 8px;
-                    justify-content: center;
-                    border-radius: 999px;
-                }
-                .btn-secondary:hover:not(:disabled) {
-                    border-color: #C60C7F;
-                    background: rgba(198, 12, 127, 0.06);
-                    transform: translateY(-2px);
-                    box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-                }
-                .btn-secondary:disabled { opacity: 0.6; cursor: not-allowed; }
-                .btn-secondary:focus, .btn-primary:focus {
-                    outline: 2px solid #D9D9D9;
-                    outline-offset: 2px;
-                }
 
                 input[type="number"]::-webkit-inner-spin-button,
                 input[type="number"]::-webkit-outer-spin-button {
@@ -796,7 +705,7 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                     width: 28px;
                     height: 28px;
                     border-radius: 50%;
-                    background: #C60C7F;
+                    background: var(--theme-primary);
                     cursor: pointer;
                     border: 4px solid #fff;
                     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -806,7 +715,7 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                     width: 28px;
                     height: 28px;
                     border-radius: 50%;
-                    background: #C60C7F;
+                    background: var(--theme-primary);
                     cursor: pointer;
                     border: 4px solid #fff;
                     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -982,7 +891,7 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                                             padding: '24px',
                                             borderRadius: '24px',
                                             fontSize: '18px',
-                                            ...(data.gender === 'male' ? { background: '#fff', color: '#C60C7F', border: '2px solid #C60C7F' } : {})
+                                            ...(data.gender === 'male' ? { background: '#fff', color: 'var(--text-main)', border: '2px solid var(--theme-primary)' } : {})
                                         }}
                                     >
                                         <span style={{ fontSize: '32px' }}>👨</span>
@@ -995,7 +904,7 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                                             padding: '24px',
                                             borderRadius: '24px',
                                             fontSize: '18px',
-                                            ...(data.gender === 'female' ? { background: '#fff', color: '#C60C7F', border: '2px solid #C60C7F' } : {})
+                                            ...(data.gender === 'female' ? { background: '#fff', color: 'var(--text-main)', border: '2px solid var(--theme-primary)' } : {})
                                         }}
                                     >
                                         <span style={{ fontSize: '32px' }}>👩</span>
@@ -1029,13 +938,15 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                                     onChange={e => setData(prev => ({ ...prev, age: parseInt(e.target.value) }))}
                                 />
                                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '12px' }}>
+                                    <div style={{ width: 240 }}>
                                     <button
                                         onClick={handleAgeSubmit}
                                         className="btn-primary anketa-dalee-btn"
-                                        style={{ fontSize: '14px', background: '#C60C7F', color: '#fff', border: 'none', width: 240, height: 52, borderRadius: 999, fontWeight: 700 }}
+                                        style={{ fontSize: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}
                                     >
                                         Далее <ChevronRight size={18} style={{ marginLeft: '6px' }} />
                                     </button>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>
@@ -1067,13 +978,15 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                                 </div>
                                 {data.goals && data.goals.length > 0 && (
                                     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '24px' }}>
+                                        <div style={{ width: 240 }}>
                                         <button
                                             onClick={handleStartAssetsStep}
                                             className="btn-primary goal-selection-next-btn"
-                                            style={{ fontSize: '14px', background: '#C60C7F', color: '#FFFFFF', border: 'none', width: 240, height: 52, borderRadius: 999, fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}
+                                            style={{ fontSize: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}
                                         >
                                             Далее <ChevronRight size={18} style={{ marginLeft: '6px' }} />
                                         </button>
+                                        </div>
                                     </div>
                                 )}
                             </div>
@@ -1110,7 +1023,7 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                                             background: 'rgba(248,250,252,0.9)',
                                             border: '1px solid #e2e8f0',
                                             borderRadius: '18px',
-                                            color: '#C60C7F',
+                                            color: 'var(--theme-primary)',
                                             fontSize: '28px',
                                             fontWeight: 700,
                                             outline: 'none',
@@ -1119,13 +1032,15 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                                         }}
                                     />
                                     <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '12px' }}>
+                                        <div style={{ width: 240 }}>
                                         <button
                                             onClick={handleInitialCapitalSubmit}
-                                            className="btn-secondary"
-                                            style={{ fontSize: '14px' }}
+                                            className="btn-primary"
+                                            style={{ fontSize: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}
                                         >
                                             Далее <ChevronRight size={18} style={{ marginLeft: '6px' }} />
                                         </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1395,13 +1310,15 @@ const VictoriaOnboarding: React.FC<VictoriaOnboardingProps> = ({ data, setData, 
                                     )}
 
                                     <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '8px' }}>
+                                        <div style={{ width: 240 }}>
                                         <button
                                             onClick={handleParametersSubmit}
-                                            className="btn-secondary"
-                                            style={{ fontSize: '14px' }}
+                                            className="btn-primary"
+                                            style={{ fontSize: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}
                                         >
                                             Далее <ChevronRight size={18} style={{ marginLeft: '6px' }} />
                                         </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

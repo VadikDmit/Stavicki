@@ -1,12 +1,12 @@
 /* Отчёт по целям — формат как на референсном макете (Пассивный доход) */
 
 :root {
-  --report-yellow: #C60C7F;
+  --report-yellow: var(--theme-primary);
   --report-black: #202023;
   --report-dark: #161618;
   --report-page-bg: #F3F7FA;
-  --report-magenta: #B12087;
-  --report-purple: #933D92;
+  --report-magenta: var(--theme-primary);
+  --report-purple: var(--theme-primary);
   --report-title-color: #150E42;
   --report-text: #0A0A0A;
   --report-muted: #5B5B5B;
@@ -71,7 +71,7 @@
 .goals-report__cover-title {
   margin: 0;
   padding: 20px 28px 20px 40px;
-  background: #C60C7F;
+  background: var(--theme-primary);
   border-radius: 0 16px 16px 0;
   display: flex;
   flex-direction: column;
@@ -82,7 +82,7 @@
   letter-spacing: 0.02em;
   line-height: 1.2;
   text-transform: uppercase;
-  box-shadow: 0 4px 24px rgba(198, 12, 127, 0.3);
+  box-shadow: 0 4px 24px rgba(193, 229, 107, 0.35);
 }
 
 .goals-report__cover-title span {
@@ -191,7 +191,7 @@
 
 /* Градиентный блок (маджента → фиолетовый): итог + «Из них» */
 .goals-report__goal-summary-block {
-  background: linear-gradient(90deg, var(--report-magenta) 0%, var(--report-purple) 100%);
+  background: var(--theme-gradient);
   border-radius: 12px;
   padding: 24px 28px;
   margin-bottom: 24px;

@@ -19,7 +19,7 @@ const IndexPage = () => (
                 href = '/report'
                 style = { {
                     padding: '12px 24px',
-                    background: '#C60C7F',
+                    background: 'var(--theme-primary)',
                     borderRadius: 8,
                     color: '#332C09',
                     fontWeight: 600,
@@ -32,9 +32,9 @@ const IndexPage = () => (
                 href = '/mini-report'
                 style = { {
                     padding: '12px 24px',
-                    border: '1px solid #C60C7F',
+                    border: '1px solid var(--theme-primary)',
                     borderRadius: 8,
-                    color: '#C60C7F',
+                    color: 'var(--theme-primary)',
                     fontWeight: 600,
                     textDecoration: 'none',
                 } }

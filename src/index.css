@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-    /* Theme tokens live in App.css (:root). These are aliases for legacy styles here. */
+    /* Theme tokens (fallbacks) — must exist everywhere (anketa too) */
+    --theme-primary: #C1E56B;
+    --theme-accent: #E5B36B;
+    --theme-gradient: linear-gradient(160deg, #8bc34a 0%, #c1e56b 50%, #d4ef82 100%);
+    --theme-disabled: #E6E6E6;
+    --theme-primary-ink: #1f4d12;
+
+    /* Aliases for legacy styles here. */
     --primary: var(--theme-primary);
     --primary-hover: var(--theme-primary);
     --secondary: #00A8B1;
@@ -38,13 +45,13 @@
 
 .manual-input:focus {
     border-bottom: 2px solid var(--primary) !important;
-    background: rgba(198, 12, 127, 0.05) !important;
+    background: rgba(193, 229, 107, 0.14) !important;
 }
 
 .premium-loader {
     width: 60px;
     height: 60px;
-    border: 3px solid rgba(198, 12, 127, 0.1);
+    border: 3px solid rgba(193, 229, 107, 0.18);
     border-top: 3px solid var(--primary);
     border-radius: 50%;
     animation: spin 1s linear infinite;
@@ -134,7 +141,7 @@ body {
 
 .btn-primary {
     background-color: var(--primary);
-    color: #fff;
+    color: #000000;
     border: none;
     padding: 12px 24px;
     border-radius: 12px;
@@ -296,7 +303,7 @@ input[type="range"]::-webkit-slider-thumb {
     border: 2px solid var(--primary);
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(198, 12, 127, 0.3);
+    box-shadow: 0 4px 12px rgba(193, 229, 107, 0.3);
     transition: all 0.2s ease;
 }
 
@@ -317,7 +324,7 @@ input[type="range"]::-moz-range-thumb {
     background: #fff;
     border: 2px solid var(--primary);
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(198, 12, 127, 0.3);
+    box-shadow: 0 4px 12px rgba(193, 229, 107, 0.3);
 }
 
 /* --- STRICT USER PROVIDED CSS START --- */
@@ -370,7 +377,7 @@ input[type="range"]::-moz-range-thumb {
     overflow: hidden;
     border-radius: 20px;
     cursor: pointer;
-    background-color: #C60C7F;
+    background-color: var(--theme-primary);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -384,7 +391,7 @@ input[type="range"]::-moz-range-thumb {
 .goalCard__title {
     width: 60%;
     height: 100%;
-    background: #C60C7F;
+    background: var(--theme-primary);
     padding: 12px 15px 12px 20px;
     display: flex;
     align-items: flex-start;
@@ -392,7 +399,7 @@ input[type="range"]::-moz-range-thumb {
     z-index: 2;
     font-size: 16px;
     font-weight: 800;
-    color: #fff;
+    color: #000;
     line-height: 1.1;
     /* ДИАГОНАЛЬНЫЙ СКОС: 100% сверху, 85% снизу для изящного угла */
     clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);

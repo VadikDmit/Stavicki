@@ -21,14 +21,14 @@ const StepGenderAge: React.FC<StepProps> = ({ data, setData, onNext }) => {
                             flex: 1,
                             padding: '20px',
                             borderRadius: '16px',
-                            border: `2px solid ${data.gender === 'male' ? '#C60C7F' : '#9CA3AF'}`,
+                            border: `2px solid ${data.gender === 'male' ? 'var(--theme-primary)' : '#9CA3AF'}`,
                             background: data.gender === 'male' ? '#fff' : '#E5E7EB',
-                            color: data.gender === 'male' ? '#C60C7F' : '#000000',
+                            color: data.gender === 'male' ? 'var(--theme-primary)' : '#000000',
                             cursor: 'pointer',
                             fontWeight: '700',
                             fontSize: '16px',
                             transition: 'all 0.2s ease',
-                            boxShadow: data.gender === 'male' ? '0 4px 12px rgba(198,12,127,0.2)' : 'inset 0 1px 2px rgba(0,0,0,0.05)'
+                            boxShadow: data.gender === 'male' ? '0 4px 12px rgba(193, 229, 107, 0.28)' : 'inset 0 1px 2px rgba(0,0,0,0.05)'
                         }}
                         onClick={() => setData({ ...data, gender: 'male' })}
                     >
@@ -40,14 +40,14 @@ const StepGenderAge: React.FC<StepProps> = ({ data, setData, onNext }) => {
                             flex: 1,
                             padding: '20px',
                             borderRadius: '16px',
-                            border: `2px solid ${data.gender === 'female' ? '#C60C7F' : '#9CA3AF'}`,
+                            border: `2px solid ${data.gender === 'female' ? 'var(--theme-primary)' : '#9CA3AF'}`,
                             background: data.gender === 'female' ? '#fff' : '#E5E7EB',
-                            color: data.gender === 'female' ? '#C60C7F' : '#000000',
+                            color: data.gender === 'female' ? 'var(--theme-primary)' : '#000000',
                             cursor: 'pointer',
                             fontWeight: '700',
                             fontSize: '16px',
                             transition: 'all 0.2s ease',
-                            boxShadow: data.gender === 'female' ? '0 4px 12px rgba(198,12,127,0.2)' : 'inset 0 1px 2px rgba(0,0,0,0.05)'
+                            boxShadow: data.gender === 'female' ? '0 4px 12px rgba(193, 229, 107, 0.28)' : 'inset 0 1px 2px rgba(0,0,0,0.05)'
                         }}
                         onClick={() => setData({ ...data, gender: 'female' })}
                     >
@@ -67,7 +67,7 @@ const StepGenderAge: React.FC<StepProps> = ({ data, setData, onNext }) => {
                     max="80"
                     value={data.age}
                     onChange={(e) => setData({ ...data, age: parseInt(e.target.value) })}
-                    style={{ width: '100%', accentColor: '#C60C7F' }}
+                    style={{ width: '100%', accentColor: 'var(--theme-primary)' }}
                     className="step-gender-age-range"
                 />
                 <style>{`
@@ -76,14 +76,14 @@ const StepGenderAge: React.FC<StepProps> = ({ data, setData, onNext }) => {
                         width: 24px; height: 24px;
                         border-radius: 50%;
                         background: #fff;
-                        border: 2px solid #C60C7F;
+                        border: 2px solid var(--theme-primary);
                         cursor: pointer;
                     }
                     .step-gender-age-range-wrap .step-gender-age-range::-moz-range-thumb {
                         width: 24px; height: 24px;
                         border-radius: 50%;
                         background: #fff;
-                        border: 2px solid #C60C7F;
+                        border: 2px solid var(--theme-primary);
                         cursor: pointer;
                     }
                 `}</style>
@@ -93,7 +93,7 @@ const StepGenderAge: React.FC<StepProps> = ({ data, setData, onNext }) => {
                 </div>
             </div>
 
-            <button className="btn-primary" onClick={onNext} style={{ background: '#C60C7F', color: '#fff', border: 'none' }}>Далее</button>
+            <button className="btn-primary" onClick={onNext}>Далее</button>
         </div>
     );
 };

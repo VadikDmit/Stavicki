@@ -49,11 +49,11 @@ input:-webkit-autofill {
 }
 
 .select__option--is-selected {
-  background: #C60C7F;
+  background: var(--theme-primary);
 }
 
 .select__option--is-focused {
-  background-color: #C60C7F !important;
+  background-color: var(--theme-primary) !important;
 
   color: white !important;
 }
@@ -81,8 +81,8 @@ input:-webkit-autofill {
 }
 
 #nprogress .spinner-icon {
-  border-top-color: #C60C7F !important;
-  border-left-color: #C60C7F !important;
+  border-top-color: var(--theme-primary) !important;
+  border-left-color: var(--theme-primary) !important;
 }
 
 /* ### MIUI STYLES */
@@ -127,7 +127,7 @@ input:-webkit-autofill {
 }
 
 .Mui-checked+.MuiSwitch-track {
-  background-color: #C60C7F !important;
+  background-color: var(--theme-primary) !important;
 }
 
 .MuiButtonBase-root,
@@ -147,7 +147,7 @@ input:-webkit-autofill {
 }
 
 .MuiTablePagination-actions .MuiButtonBase-root svg {
-  fill: #C60C7F !important;
+  fill: var(--theme-primary) !important;
 }
 
 .MuiTablePagination-actions .MuiButtonBase-root:hover svg {
@@ -184,7 +184,7 @@ input:-webkit-autofill {
 }
 
 .MuiDataGrid-columnHeaders {
-  background-color: #C60C7F !important;
+  background-color: var(--theme-primary) !important;
   border-radius: 10px !important;
 
   font-size: 18px !important;
@@ -233,7 +233,7 @@ input:-webkit-autofill {
 }
 
 .MuiDataGrid-row.Mui-selected .MuiButtonBase-root svg {
-  fill: #C60C7F !important;
+  fill: var(--theme-primary) !important;
 }
 
 .MuiDataGrid-row.Mui-selected .MuiButtonBase-root:hover svg {
@@ -272,7 +272,7 @@ input:-webkit-autofill {
 }
 
 .MuiCircularProgress-root {
-  color: #C60C7F !important;
+  color: var(--theme-primary) !important;
 }
 
 .MuiDataGrid-menu .MuiMenuItem-root:hover {
@@ -323,7 +323,7 @@ input:-webkit-autofill {
 }
 
 .list-selector:hover {
-  border-color: #C60C7F !important;
+  border-color: var(--theme-primary) !important;
 }
 
 .list-dropdown {
@@ -332,13 +332,13 @@ input:-webkit-autofill {
 
 .list-focused .list-selector,
 .list-open .list-selector {
-  border-color: #C60C7F !important;
+  border-color: var(--theme-primary) !important;
   box-shadow: 0 0 0 2px rgb(176 116 179 / 10%) !important;
 }
 
 .radio-children-button-checked,
 .radio-button-checked {
-  background: #C60C7F;
+  background: var(--theme-primary);
   border-radius: 10px !important;
 }
 
@@ -362,7 +362,7 @@ input:-webkit-autofill {
 .radio-inner::after {
   margin-inline-start: -8px !important;
 
-  background: #C60C7F;
+  background: var(--theme-primary);
 
   transform: scale(0.7) !important;
 }
@@ -398,7 +398,7 @@ input:-webkit-autofill {
 }
 
 .goal_slider-track {
-  background-color: #C60C7F !important;
+  background-color: var(--theme-primary) !important;
 }
 
 .goal_slider-handle {
@@ -418,7 +418,7 @@ input:-webkit-autofill {
 
   border-width: 10px !important;
 
-  background-color: #C60C7F !important;
+  background-color: var(--theme-primary) !important;
   box-shadow: 0 0 0 0 transparent !important;
 
   top: 50% !important;
@@ -474,7 +474,7 @@ input:-webkit-autofill {
 }
 
 .goal_input-handler:hover span {
-  color: #C60C7F !important;
+  color: var(--theme-primary) !important;
 }
 
 .goal_edit [role="tooltip"],
@@ -518,7 +518,7 @@ input:-webkit-autofill {
   padding-inline-start: 49px;
   padding-inline-end: 50px;
 
-  color: #C60C7F;
+  color: var(--theme-primary);
 }
 
 .goal_edit-buttons .ant-btn-primary,
@@ -526,7 +526,7 @@ input:-webkit-autofill {
   padding-inline-start: 55px;
   padding-inline-end: 56px;
 
-  background: #C60C7F;
+  background: var(--theme-primary);
 
   color: white;
 }
@@ -567,7 +567,7 @@ input:-webkit-autofill {
   }
 
   &.auth-tab-active {
-    border: 1px solid #C60C7F !important;
+    border: 1px solid var(--theme-primary) !important;
   }
 }
 
@@ -578,7 +578,7 @@ input:-webkit-autofill {
 .auth_button {
   &,
   &[disabled] {
-    background: #C60C7F !important;
+    background: var(--theme-primary) !important;
 
     box-shadow: none !important;
     border: none !important;

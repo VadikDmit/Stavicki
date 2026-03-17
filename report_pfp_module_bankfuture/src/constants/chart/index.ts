@@ -40,7 +40,7 @@ const options: ChartOptions<'line'> = {
 };
 
 export const datasetsOptions = {
-    borderColor: '#C60C7F',
+    borderColor: 'var(--theme-primary)',
     tension: 0.3,
     fill: false,
     pointRadius: 0,

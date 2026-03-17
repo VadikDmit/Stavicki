@@ -33,14 +33,14 @@ const StepClientData: React.FC<StepClientDataProps> = ({ data, setData, onNext }
                     width: 24px; height: 24px;
                     border-radius: 50%;
                     background: #fff;
-                    border: 2px solid #C60C7F;
+                    border: 2px solid var(--theme-primary);
                     cursor: pointer;
                 }
                 .step-client-data .step-client-data-range::-moz-range-thumb {
                     width: 24px; height: 24px;
                     border-radius: 50%;
                     background: #fff;
-                    border: 2px solid #C60C7F;
+                    border: 2px solid var(--theme-primary);
                     cursor: pointer;
                 }
             `}</style>
@@ -91,14 +91,14 @@ const StepClientData: React.FC<StepClientDataProps> = ({ data, setData, onNext }
                         style={{
                             padding: '16px',
                             borderRadius: '16px',
-                            border: `2px solid ${data.gender === 'male' ? '#C60C7F' : '#9CA3AF'}`,
+                            border: `2px solid ${data.gender === 'male' ? 'var(--theme-primary)' : '#9CA3AF'}`,
                             background: data.gender === 'male' ? '#fff' : '#E5E7EB',
-                            color: data.gender === 'male' ? '#C60C7F' : '#000',
+                            color: data.gender === 'male' ? 'var(--theme-primary)' : '#000',
                             cursor: 'pointer',
                             fontWeight: '700',
                             fontSize: '16px',
                             transition: 'all 0.2s ease',
-                            boxShadow: data.gender === 'male' ? '0 4px 12px rgba(198,12,127,0.2)' : 'none'
+                            boxShadow: data.gender === 'male' ? '0 4px 12px rgba(193, 229, 107, 0.28)' : 'none'
                         }}
                     >
                         Мужской
@@ -109,14 +109,14 @@ const StepClientData: React.FC<StepClientDataProps> = ({ data, setData, onNext }
                         style={{
                             padding: '16px',
                             borderRadius: '16px',
-                            border: `2px solid ${data.gender === 'female' ? '#C60C7F' : '#9CA3AF'}`,
+                            border: `2px solid ${data.gender === 'female' ? 'var(--theme-primary)' : '#9CA3AF'}`,
                             background: data.gender === 'female' ? '#fff' : '#E5E7EB',
-                            color: data.gender === 'female' ? '#C60C7F' : '#000',
+                            color: data.gender === 'female' ? 'var(--theme-primary)' : '#000',
                             cursor: 'pointer',
                             fontWeight: '700',
                             fontSize: '16px',
                             transition: 'all 0.2s ease',
-                            boxShadow: data.gender === 'female' ? '0 4px 12px rgba(198,12,127,0.2)' : 'none'
+                            boxShadow: data.gender === 'female' ? '0 4px 12px rgba(193, 229, 107, 0.28)' : 'none'
                         }}
                     >
                         Женский
@@ -135,7 +135,7 @@ const StepClientData: React.FC<StepClientDataProps> = ({ data, setData, onNext }
                     max="80"
                     value={data.age}
                     onChange={(e) => handleChange('age', parseInt(e.target.value))}
-                    style={{ width: '100%', accentColor: '#C60C7F' }}
+                    style={{ width: '100%', accentColor: 'var(--theme-primary)' }}
                     className="step-client-data-range"
                 />
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '8px', color: 'var(--text-muted)', fontSize: '12px' }}>
@@ -152,8 +152,6 @@ const StepClientData: React.FC<StepClientDataProps> = ({ data, setData, onNext }
                     width: '100%',
                     opacity: isFormValid() ? 1 : 0.5,
                     cursor: isFormValid() ? 'pointer' : 'not-allowed',
-                    background: '#C60C7F',
-                    color: '#fff',
                     border: 'none'
                 }}
             >
