@@ -54,6 +54,11 @@ const INCOME_GROWTH_FACTORS = [
 const LANDING_GOALS = GOAL_GALLERY_ITEMS.slice(0, 8);
 
 const LandingPage: React.FC<LandingPageProps> = ({ onStart, onLogin }) => {
+    const disableClick: React.MouseEventHandler<HTMLElement> = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+    };
+
     const scrollToSection = (sectionId: string) => {
         const section = document.getElementById(sectionId);
         section?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -73,16 +78,16 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart, onLogin }) => {
                     </div>
 
                     <nav className="landing-nav">
-                        <button type="button" onClick={() => scrollToSection('why-fin-plan')}>Почему важно</button>
-                        <button type="button" onClick={() => scrollToSection('income-growth')}>Рост доходности</button>
-                        <button type="button" onClick={() => scrollToSection('goals-showcase')}>Цели</button>
+                        <button type="button" onClick={disableClick}>Почему важно</button>
+                        <button type="button" onClick={disableClick}>Рост доходности</button>
+                        <button type="button" onClick={disableClick}>Цели</button>
                     </nav>
 
                     <div className="landing-header__actions">
-                        <button type="button" className="landing-btn landing-btn--secondary" onClick={onLogin}>
+                        <button type="button" className="landing-btn landing-btn--secondary" onClick={disableClick}>
                             Войти
                         </button>
-                        <button type="button" className="landing-btn landing-btn--primary" onClick={onStart}>
+                        <button type="button" className="landing-btn landing-btn--primary" onClick={disableClick}>
                             Начать
                         </button>
                     </div>
@@ -100,7 +105,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart, onLogin }) => {
                         <button
                             type="button"
                             className="landing-btn landing-btn--primary landing-btn--large landing-brand-hero__button"
-                            onClick={onStart}
+                            onClick={disableClick}
                         >
                             Начать
                         </button>
@@ -187,10 +192,10 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart, onLogin }) => {
                             с&nbsp;понятными шагами, сроками и&nbsp;метриками контроля.
                         </p>
                         <div className="landing-hero__actions">
-                            <button type="button" className="landing-btn landing-btn--primary landing-btn--large" onClick={onStart}>
+                            <button type="button" className="landing-btn landing-btn--primary landing-btn--large" onClick={disableClick}>
                                 Начать финансовое планирование
                             </button>
-                            <button type="button" className="landing-btn landing-btn--secondary landing-btn--large" onClick={() => scrollToSection('why-fin-plan')}>
+                            <button type="button" className="landing-btn landing-btn--secondary landing-btn--large" onClick={disableClick}>
                                 Что это даёт
                             </button>
                         </div>
@@ -300,7 +305,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart, onLogin }) => {
                 <section className="landing-cta">
                     <h2 className="ui-heading-h2">Готовы перейти от хаоса к системе?</h2>
                     <p>Запустите планирование и&nbsp;получите понятную карту действий под&nbsp;ваши цели.</p>
-                    <button type="button" className="landing-btn landing-btn--secondary landing-btn--large" onClick={onStart}>
+                    <button type="button" className="landing-btn landing-btn--secondary landing-btn--large" onClick={disableClick}>
                         Начать сейчас <ArrowRight size={18} />
                     </button>
                 </section>
@@ -315,13 +320,13 @@ const LandingPage: React.FC<LandingPageProps> = ({ onStart, onLogin }) => {
                         <div className="landing-footer__links">
                             <span>© {new Date().getFullYear()} CONOMY Terminal</span>
                             <span>·</span>
-                            <a href="#" style={{ color: '#4b5563', textDecoration: 'underline', textDecorationThickness: '1px' }}>
+                            <a href="#" onClick={disableClick} style={{ color: '#4b5563', textDecoration: 'underline', textDecorationThickness: '1px' }}>
                                 Политика конфиденциальности
                             </a>
                         </div>
                     </div>
                     <div className="landing-footer__right">
-                        <a href="https://bankfuture.ru" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Разработка BankFuture</a>
+                        <a href="https://bankfuture.ru" onClick={disableClick} style={{ color: 'inherit', textDecoration: 'none' }}>Разработка BankFuture</a>
                     </div>
                 </div>
             </footer>
